@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JsoupLearn:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/JsoupLearn_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="JsoupLearn/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JsoupLearn" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Jsoup环境包" />
+          <element id="library" level="project" name="j2ee环境包" />
+          <element id="library" level="project" name="Tomcat环境" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
