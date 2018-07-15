@@ -11,4 +11,13 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/SearchServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ParseBookServlet</servlet-name>
+        <servlet-class>com.kong.useJsoup.view.ParseBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParseBookServlet</servlet-name>
+        <url-pattern>/ParseBookServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
