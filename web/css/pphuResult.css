@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:#c8eeeb;
+}
+ul{
+    list-style: none;
+}
+
+body{
+
+}
+.container{
+    width: 960px;
+    margin:0 auto;
+}
+.top{
+    margin-top:0;
+    height:80px;
+    background: #07b1a6;
+}
+.headline{
+    width: 960px;
+    margin:0 auto;
+}
+.headline .line{
+    color: #fff;
+    font-size: 44px;
+    line-height: 80px;
+    padding-left: 28px;
+}
+.searchBox{
+    width: 356px;
+    height:40px;
+    background:#c8eeeb;
+    float: left;
+}
+.searchName{
+    color: #fff;
+    height:38px;
+    background:#168c84;
+    line-height:38px;
+    padding-left:6px;
+}
+#bookList .title{
+    color:gray;
+    width: 18px;
+    height:20px;
+}
+#bookList{
+    background:#fff;
+    width: 960px;
+}
+tr{
+    height:52px;
+
+}
+td{
+    color: #1699b4;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color:#168c84;
+}
+a:hover{
+    color: #ff8018;
+}
