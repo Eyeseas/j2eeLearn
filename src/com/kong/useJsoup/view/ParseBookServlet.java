@@ -21,9 +21,17 @@ public class ParseBookServlet extends HttpServlet {
         parseBookDetial pbd = new parseBookDetial();
         pbd.setBookId(bookId);
 
-        List el = pbd.parseHead();
-        //System.out.println(pbd.parseHead());
-        request.setAttribute("allDet",el);
+
+        request.setAttribute("bookname",pbd.getBookName());
+        request.setAttribute("author",pbd.getAuthorName());
+        request.setAttribute("updatetime",pbd.getUpdateTime());
+        request.setAttribute("intro",pbd.bookIntro());
+        request.setAttribute("img",pbd.bookImg());
+
+        //章节列表
+        List chapter = pbd.parseChapter();
+
+        request.setAttribute("allChapter",chapter);
         request.getRequestDispatcher("bookDetial.jsp").forward(request,response);
     }
 

@@ -10,6 +10,7 @@
 <head>
     <title>SearchBook</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
 </head>
 <body>
 <div id="page">
@@ -21,9 +22,8 @@
 
         </fieldset>
     </form>
-    <div id="resultsDiv"></div>
 </div>
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 
 </body>
 </html>

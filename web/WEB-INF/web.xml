@@ -20,4 +20,13 @@
         <servlet-name>ParseBookServlet</servlet-name>
         <url-pattern>/ParseBookServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChapterContentServlet</servlet-name>
+        <servlet-class>com.kong.useJsoup.view.ChapterContentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChapterContentServlet</servlet-name>
+        <url-pattern>/ChapterContentServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

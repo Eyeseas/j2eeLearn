@@ -41,7 +41,16 @@
         </ul>
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/common.js"></script>
+    <script>
+        $("#bookList .odd a").each(function () {
+            //截取pathname /xxxxx/
+            this.href = "ParseBookServlet?bookid="+this.pathname.substring(1,this.pathname.length-1);
+        })
+
+        $("#bookList .even a").each(function () {
+            this.href = "ChapterContentServlet?chapter="+this.pathname.substring(1,this.pathname.length-5);
+        })
+    </script>
 
   </body>
 </html>
