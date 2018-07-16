@@ -16,7 +16,7 @@ public class SearchServlet extends javax.servlet.http.HttpServlet {
         sr.setUrl("https://www.biquge5200.cc/modules/article/search.php?searchkey=");
         List res = sr.getSearch();
 
-
+        request.setAttribute("searchKeyWord",bookname);
         request.setAttribute("dddd",res);
         request.getRequestDispatcher("searchresult.jsp").forward(request,response);
 

@@ -12,6 +12,9 @@
     <title>书籍详情</title>
 </head>
 <body>
-    <c:out value="${allDet}"></c:out>
+
+    <c:forEach items="${allDet}" var="lis" varStatus="st">
+        <c:out value="${lis}" escapeXml="false" ></c:out>
+    </c:forEach>
 </body>
 </html>

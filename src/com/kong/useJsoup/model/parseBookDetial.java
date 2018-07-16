@@ -5,7 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import javax.print.Doc;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,17 +21,6 @@ public class parseBookDetial {
         this.bookId = bookId;
     }
 
-//    public List bookTitle() throws IOException {
-//        //整个网页文档
-//        Document doc = Jsoup.connect("https://www.biquge5200.cc/"+bookId).get();
-//        List titlePart = new ArrayList();
-//        Elements bookinfo = doc.getElementsByTag("h1");
-//        String booktitle = bookinfo.html();
-//
-//        titlePart.add(booktitle);
-//
-//        return titlePart;
-//    }
 
 
 //    获取整个页面文档

@@ -9,7 +9,6 @@
 <html>
 <head>
     <title>SearchBook</title>
-    <%--<link rel="stylesheet" href="css/pphu.css">--%>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <body>
