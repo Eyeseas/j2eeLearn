@@ -2,355 +2,185 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
-<style>
-*{
-    margin: 0;
-    padding: 0;
-}
+    <title>小说爬虫</title>
+    <link rel="stylesheet" href="css/indexCss.css">
 
-    /* 清除一些块级标签自带的内外边距 */
-        h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dt,dd,li,form{
-            padding:0;
-            margin:0;
-        }
-        /* h标签不加粗 */
-
-        /* 清除ul前的小黑点，ol前面的序号 */
-        ul,ol{
-            list-style: none;
-        }
-        /* 清除a标签自带的下划线 */
-        a{
-            text-decoration:none;
-            cursor:pointer;
-        }
-        img{
-            display: block;
-        }
-html,body{
-    width: 100%;
-    height: 100%;
-}
-
-html{
-    background: url("img/back.jpg") 0 0 no-repeat;
-    background-size: cover;
-
-}
-
-#box{
-    width: 100%;
-    height: 100%;
-    background-color:rgba(0, 0, 0, 0.6);
-    display: none;
-    float: left;
-}
-
-
-#search_bar{
-    position:absolute;
-    left: 40%;
-    top:300px;
-    width: 500px;
-    height: 45px;
-    border-width:2px ;
-    z-index: 99;
-}
-
-.title{
-    position:absolute;
-    top: -100px;
-    left: 50px;
-}
-
-.title h2{
-    font-size:50px;
-    font-family:"华文楷体";
-    text-align: center;
-    color:#6c9bd8;
-}
-
-.title span{
-    letter-spacing: 10px;
-    font-size: 16px;
-    font-family:"宋体";
-    text-align: center;
-    color:#6c9bd8;
-}
-
-
-#search{
-    outline-style: none;
-    float: left;
-    border:none;
-    width: 430px;
-    height: 45px;
-    display: block;
-    font-size:16px;
-    text-align: left;
-    line-height: 45px;
-    padding: 0;
-    border-radius: 5px;
-    text-indent: 12px;
-    border-radius:4px 0 0 4px;
-    background-color:rgba(255, 255, 255, 0.3);
-    color:white;
-}
-
-#btn{
-    color:white;
-    outline-style: none;
-    background: white;
-    float: right;
-    width: 70px;
-    height: 45px;
-    border:none;
-    border-radius:0 4px 4px 0;
-    cursor: pointer;
-    background: url("img/search.jpg") 50% 50% no-repeat;
-    background-size: cover;
-    filter: alpha(opacity=50);
-    -moz-opacity:0.5;
-    -khtml-opacity:0.5;
-    opacity: 0.5;
-}
-
-.logo{
-    position:absolute;
-    top: -25px;
-    left: -180px;
-    width: 135px;
-    height: 100px;
-}
-
-.rectangle{
-    position:absolute;
-    top: 5px;
-    left: 5px;
-    width: 75px;
-    height: 80px;
-    border: 4px solid white;
-    border-right:none;
-}
-
-.top_line{
-    position:absolute;
-    top: -4px;
-    right:-4px;
-    height: 20px;
-    border-right: 4px solid white;
-}
-
-.bottom_line{
-    position:absolute;
-    bottom: -4px;
-    right:-4px;
-    height: 20px;
-    border-right: 4px solid white;
-}
-
-.right_line{
-    position:absolute;
-    width: 90px;
-    border-bottom: 1px solid white;
-    left: 40px;
-    top: 12px;
-}
-
-.read{
-    position:absolute;
-    top: 28px;
-    left: 15px;
-    width: 140px;
-    font-size: 30px;
-    color:white;
-    font-family:"华文楷体";
-    letter-spacing: 5px;
-}
-
-.person{
-    position:absolute;
-    top: 55px;
-    left: 15px;
-    font-size: 13px;
-    color:white;
-}
-
-#book_list{
-    position:absolute;
-    left: 33%;
-    top:450px;
-    width: 600px;
-    background:rgba(231, 251, 255, 0.3);
-}
-
-#introduction{
-    height: 120px;
-    border-bottom:1px solid #89c7e5;
-}
-
-#information{
-    padding-left: 110px;
-    position:relative;
-}
-
-        #information h1{
-            font-family:"宋体";
-            font-weight: bolder;
-            font-size: 26px;
-            line-height: 35px;
-        }
-        #information h1 a{
-            color:#89c7e5;
-        }
-
-
-       #txt p{
-            margin-top: 5px;
-            font-size: 14px;
-            line-height: 25px;
-            color:#89c7e5;
-        }
-
-        #txt #p1{
-            border-bottom:1px dashed #89c7e5;
-        }
-
-        #txt #p2{
-            padding:10px 30px;
-            font-size: 12px;
-        }
-
-
-        #txt span{
-            display: inline-block;
-            width: 245px;
-        }
-
-        #txt b{
-            font-weight: normal;
-            color:#89c7e5;
-        }
-
-        #txt p a{
-            color:#89c7e5;
-        }
-
-
-        #picture{
-            width: 80px;
-            height: 96px;
-            background:#e1eded;
-            position:absolute;
-            top: 10px;
-            left: 15px;
-            background-position:center center;
-            background-repeat:no-repeat;
-        }
-
-
-
-</style>
 </head>
 <body>
-    <div id="box"></div>
-    <div id="search_bar">
-        <form method="get" action="SearchServlet">
-            <input type="text" id="search" name="bookname">
-            <input type="submit" id="btn">
-        </form>
+<div id="box"></div>
+<div id="search_bar">
+    <form action="SearchServlet" method="get">
+        <input type="text" id="search" name="bookname">
+        <input type="submit" id="btn">
+    </form>
 
 
-        <div class="title"><h2>小说汇</h2><span>海量小说任您搜索</span></div>
+    <div class="title"><h2>小说汇</h2><span>海量小说任您搜索</span></div>
 
-        <div class="logo">
-            <div class="rectangle"><div class="top_line"></div><div class="bottom_line"></div></div>
-            <div class="read">小说阅读</div>
-            <div class="person">PPhu<div class="right_line"></div></div>
-        </div>
-
-        <script>
-            function $(id){
-                return document.getElementById(id);
-            }
-
-            $("search").onclick = function(event){
-                event.stopPropagation();
-                $("box").style.display = "block";
-            }
-
-            $("box").onclick = function(){
-                $("box").style.display = "none";
-            }
-        </script>
+    <div class="logo">
+        <div class="rectangle"><div class="top_line"></div><div class="bottom_line"></div></div>
+        <div class="read">小说阅读</div>
+        <div class="person">PPhu<div class="right_line"></div></div>
     </div>
 
-    <div id="book_list">
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
 
-        <div id="introduction">
+        $("search").onclick = function(event){
+            event.stopPropagation();
+            $("box").style.display = "block";
+        }
+
+        $("box").onclick = function(){
+            $("box").style.display = "none";
+        }
+    </script>
+</div>
+
+<div id="rotate">
+    <ul id="book_list">
+
+        <li id="introduction">
             <!-- 书籍简介 -->
             <div id="information">
                 <!-- 书籍封面 -->
-                <a href="##" id="picture"></a>
-                <h1><a href="##">元尊</a></h1>
+                <a href="ParseBookServlet?bookid=79_79883" id="picture" style="background-image: url('http://r.m.biquge5200.cc/cover/aHR0cDovL3N0YXRpYy56b25naGVuZy5jb20vdXBsb2FkL2NvdmVyL2ZlLzk4L2ZlOThiNjhmMDYyN2VlMmIxZmVmMWI0NzhhOTgzNWNjLmpwZWc=')"></a>
+                <h1><a href="ParseBookServlet?bookid=79_79883">元尊</a></h1>
                 <div id="txt">
-                <p id="p1">
-                    <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>天蚕土豆</b></span><span>最新章节：<a href="##">第1000章</a></span>
-                </p>
-                <p id="p2">
-                    asdhquihwdiu
-                </p>
-            </div></div>
-        </div>
+                    <p id="p1">
+                        <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>天蚕土豆</b></span><span>最近更新：<a href="##">2018-07-17</a></span>
+                    </p>
+                    <p id="p2">
+                        吾有一口玄黄气，可吞天地日月星。
+                    </p>
+                </div></div>
+        </li>
 
-        <div id="introduction">
+        <li id="introduction">
             <!-- 书籍简介 -->
             <div id="information">
                 <!-- 书籍封面 -->
-                <a href="##" id="picture"></a>
-                <h1><a href="##">圣墟</a></h1>
+                <a href="ParseBookServlet?bookid=0_984" id="picture" style="background-image: url('http://r.m.biquge5200.cc/files/article/image/0/984/984s.jpg')"></a>
+                <h1><a href="ParseBookServlet?bookid=0_984">凡人修仙传</a></h1>
                 <div id="txt">
-                <p id="p1">
-                    <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>天蚕土豆</b></span><span>最新章节：<a href="##">第1000章</a></span>
-                </p>
-                <p id="p2">
-                    asdhquihwdiu
-                </p>
-            </div></div>
-        </div>
+                    <p id="p1">
+                        <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>忘语</b></span><span>最近更新：<a href="##">2017-06-03</a></span>
+                    </p>
+                    <p id="p2">
+                        一个普通山村小子，偶然下进入到当地江湖小门派，成了一名记名弟子
+                    </p>
+                </div></div>
+        </li>
 
-        <div id="introduction">
+        <li id="introduction">
             <!-- 书籍简介 -->
             <div id="information">
                 <!-- 书籍封面 -->
-                <a href="##" id="picture"></a>
-                <h1><a href="##">圣墟</a></h1>
+                <a href="ParseBookServlet?bookid=0_7" id="picture" style="background-image: url('http://r.m.biquge5200.cc/files/article/image/0/7/7s.jpg')"></a>
+                <h1><a href="ParseBookServlet?bookid=0_7">大主宰</a></h1>
                 <div id="txt">
-                <p id="p1">
-                    <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>天蚕土豆</b></span><span>最新章节：<a href="##">第1000章</a></span>
-                </p>
-                <p id="p2">
-                    asdhquihwdiu
-                </p>
-            </div></div>
-        </div>
+                    <p id="p1">
+                        <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>天蚕土豆</b></span><span>最近更新：<a href="##">2017-07-08</a></span>
+                    </p>
+                    <p id="p2">
+                        斗破大结局时，萧炎所去的新世界，与林动最终去往的神秘世界，是相同的......
+                    </p>
+                </div></div>
+        </li>
 
-        <div id="introduction">
+        <li id="introduction">
             <!-- 书籍简介 -->
             <div id="information">
                 <!-- 书籍封面 -->
-                <a href="##" id="picture"></a>
-                <h1><a href="##">圣墟</a></h1>
+                <a href="ParseBookServlet?bookid=52_52542" id="picture" style="background-image: url('http://r.m.biquge5200.cc/cover/aHR0cDovL3FpZGlhbi5xcGljLmNuL3FkYmltZy8zNDk1NzMvMTAwNDYwODczOC8xODA=')"></a>
+                <h1><a href="ParseBookServlet?bookid=52_52542">圣墟</a></h1>
                 <div id="txt">
-                <p id="p1">
-                    <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>天蚕土豆</b></span><span>最新章节：<a href="##">第1000章</a></span>
-                </p>
-                <p id="p2">
-                    asdhquihwdiu
-                </p>
-            </div></div>
-        </div>
-    </div>
+                    <p id="p1">
+                        <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>辰东</b></span><span>最近更新：<a href="##">2018-07-17</a></span>
+                    </p>
+                    <p id="p2">
+                        在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地
+                    </p>
+                </div></div>
+        </li>
+
+        <li id="introduction">
+            <!-- 书籍简介 -->
+            <div id="information">
+                <!-- 书籍封面 -->
+                <a href="ParseBookServlet?bookid=52_52516" id="picture" style="background-image: url('http://r.m.biquge5200.cc/cover/aHR0cDovL3FpZGlhbi5xcGljLmNuL3FkYmltZy8zNDk1NzMvNjM4NTYvMTgw')"></a>
+                <h1><a href="ParseBookServlet?bookid=52_52516">神墓</a></h1>
+                <div id="txt">
+                    <p id="p1">
+                        <span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<b>辰东</b></span><span>最近更新：<a href="##">2018-02-13</a></span>
+                    </p>
+                    <p id="p2">
+                        一个死去万载岁月的平凡青年从远古神墓中复活而出……
+                    </p>
+                </div></div>
+        </li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+
+        function $(id){
+            return document.getElementById(id);
+        }
+
+        var oLi = $("book_list").getElementsByTagName("li");
+        var num = 0;
+        var introH = $("introduction").offsetHeight;
+
+        function scroll(){
+            $("book_list").style.top = -introH*num+"px";
+        }
+
+        var timer = setInterval(function(){
+            num++;
+            if(num == oLi.length-1){
+                num = 0;
+            }
+            scroll();
+        },2000)
+
+        $("rotate").onmouseover = function(){
+            clearInterval(timer);
+        }
+
+        $("rotate").onmouseout = function(){
+            num =Math.floor(num);
+            timer = setInterval(function(){
+                num++;
+                if(num == oLi.length-1){
+                    num = 0;
+                }
+                scroll();
+            },2000)
+        }
+
+        $("rotate").onmousewheel = function(e){
+            if(e.wheelDelta == -120){
+                num+=0.5;
+                if(num == oLi.length-1.5){
+                    num = 0;
+                }
+                scroll();
+
+            }else if(e.wheelDelta == 120){
+                num-=0.5;
+                if (num == -0.5) {
+                    num = oLi.length-2;
+                }
+                scroll();
+
+            }
+        }
+    }
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+
 </body>
 </html>

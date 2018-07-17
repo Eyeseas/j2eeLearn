@@ -38,4 +38,5 @@
         <servlet-name>NextPrevServlet</servlet-name>
         <url-pattern>/NextPrevServlet</url-pattern>
     </servlet-mapping>
+
 </web-app>
