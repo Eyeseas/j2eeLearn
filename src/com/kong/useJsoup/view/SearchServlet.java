@@ -10,7 +10,8 @@ import java.util.List;
 
 public class SearchServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String bookname = request.getParameter("bookname");
+        request.setCharacterEncoding("utf-8");
+        String bookname =request.getParameter("bookname") ;
         search sr = new search();
         sr.setName(bookname);
         sr.setUrl("https://www.biquge5200.cc/modules/article/search.php?searchkey=");
