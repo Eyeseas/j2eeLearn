@@ -158,6 +158,7 @@
         #chapter dd a{
             color:#444444;
             font-size: 12px;
+
         }
 
     </style>
@@ -196,18 +197,27 @@
     </dl>
 </div>
 
-    <%--<c:forEach items="${allDet}" var="lis" varStatus="st">--%>
-        <%--<c:out value="${lis}" escapeXml="false" ></c:out>--%>
-    <%--</c:forEach>--%>
-
-
-
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script>
+
         // 处理每一个章节的a标签
         $("#chapter dd a").each(function () {
             this.href = "ChapterContentServlet?chapter="+this.pathname.substring(1,this.pathname.length-5);
+        })
+
+
+        $("#chapter dd").click(function () {
+            var prevNode =$(this).prev()[0].children[0];
+            var nextNode =$(this).next()[0].children[0];
+            //console.log($(prevNode).attr("href")+"    "+$(nextNode).attr("href"));
+            $.post("NextPrevServlet",
+                {
+                    prevChapter:$(prevNode).attr("href"),
+                    nextChapter:$(nextNode).attr("href")
+                }
+            );
+
         })
     </script>
 </body>

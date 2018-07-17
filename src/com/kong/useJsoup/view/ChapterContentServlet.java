@@ -10,19 +10,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "ChapterContentServlet")
 public class ChapterContentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String chapterId = request.getParameter("chapter");
-        //System.out.print(chapterId);
         bookContent bk = new bookContent();
         bk.setChapterId(chapterId);
 
+//        接收来自NextPrevServlet传的值
+        String prevchapter = (String)this.getServletContext().getAttribute("prev");
+        String nextchapter = (String)this.getServletContext().getAttribute("next");
 
         request.setAttribute("title",bk.getTitle());
         request.setAttribute("chapterTitle",bk.getChapterTitle());
         request.setAttribute("content", bk.getContent());
+        request.setAttribute("prev",prevchapter);
+        request.setAttribute("next",nextchapter);
         request.getRequestDispatcher("chapterContent.jsp").forward(request,response);
     }
 

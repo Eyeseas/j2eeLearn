@@ -79,17 +79,17 @@
 <div class="articleBox">
     <div class="headline">
         <h1 class="title">${chapterTitle}</h1>
-        <a class="prev" href="">上一章</a>
-        <a class="articleName" href="">章节目录</a>
-        <a class="next" href="">下一章</a>
+        <a class="prev" href="${prev}">上一章</a>
+        <a class="articleName" href="##">章节目录</a>
+        <a class="next" href="${next}">下一章</a>
     </div>
     <div class="mainbody">
         <c:out value="${content}" escapeXml="false"></c:out>
     </div>
     <div class="list">
-        <a class="prev" href="">上一章</a>
-        <a class="articleList" href="">章节目录</a>
-        <a class="next" href="">下一章</a>
+        <a class="prev" href="${prev}">上一章</a>
+        <a class="articleList" href="##">章节目录</a>
+        <a class="next" href="${next}">下一章</a>
     </div>
 </div>
 <div class="footer">

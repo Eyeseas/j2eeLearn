@@ -29,4 +29,13 @@
         <servlet-name>ChapterContentServlet</servlet-name>
         <url-pattern>/ChapterContentServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NextPrevServlet</servlet-name>
+        <servlet-class>com.kong.useJsoup.view.NextPrevServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NextPrevServlet</servlet-name>
+        <url-pattern>/NextPrevServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
