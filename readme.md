@@ -6,5 +6,5 @@
 
 ### 效果图
 
-![exp](exmple.gif)
+![exp](example.gif)
 
