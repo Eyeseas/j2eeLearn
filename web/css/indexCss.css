@@ -61,7 +61,7 @@ html{
 
 .title h2{
     font-size:50px;
-    font-family:"华文行楷";
+    font-family:"华文楷体";
     text-align: center;
     color:#6c9bd8;
 }
@@ -150,7 +150,7 @@ html{
     width: 90px;
     border-bottom: 1px solid white;
     left: 40px;
-    top: 10px;
+    top: 13px;
 }
 
 .read{
@@ -160,13 +160,13 @@ html{
     width: 140px;
     font-size: 30px;
     color:white;
-    font-family:"华文行楷";
+    font-family:"华文楷体";
     letter-spacing: 5px;
 }
 
 .person{
     position:absolute;
-    top: 53px;
+    top: 62px;
     left: 15px;
     font-size: 13px;
     color:white;
